@@ -1,12 +1,19 @@
 {{!< default}}
 
-<div class="wrap">
+<div class="wrap {{post_class}}">
     <section class="blog-content">
 
-        <article class="{{post_class}}">
+        <article>
         {{#post}}
 
-            <a class="post-meta" href="{{@blog.url}}">&larr; Back to the front page</a>
+            {{! If post is featured and has an image, make a big hero banner }}
+            {{#if image}}{{#if featured}}
+            <div class="hero">
+                <div class="hero-image" style="background-image: url({{image}});"></div>
+            </div>
+            {{/if}}{{/if}}
+
+            <a class="post-meta back-link" href="{{@blog.url}}">&larr; Back to the front page</a>
 
             <h1 class="post-title">{{{title}}}</h1>
             <section class="post-meta">
@@ -18,7 +25,7 @@
             </section>
 
             <section class="post-content">
-                {{#if image}}<img src="{{image}}" alt="Post image" />{{/if}}
+                {{#if image}}{{#unless featured}}<img src="{{image}}" alt="Post image" />{{/unless}}{{/if}}
                 {{content}}
             </section>
 
