@@ -210,6 +210,9 @@ h4 a, h5 a, h6 a {
     color: $blue;
     background: lighten($lightgrey, 5%);
 }
+.blog-header .nav-current a {
+    color: $blue;
+}
 
 .blog-header li:first-child a {
     font-weight: 400;
