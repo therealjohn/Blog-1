@@ -32,7 +32,9 @@
             <footer class="post-footer">
 
                 <section class="author">
-                    <img class="author-img" src="{{author.image}}" alt="Author image" nopin="nopin" />
+                    <div class="author-img">
+                        <img class="author-img" src="{{author.image}}" alt="Author image" nopin="nopin" />
+                    </div>
                     <div class="author-meta">
                         <h4>{{author.name}}</h4>
                         <p>{{{author.bio}}} <a href="{{author.website}}">{{author.website}}</a></p>
@@ -50,7 +52,7 @@
                     {{/next_post}}
                 </section>
 
-                <a class="button-add large wide" data-toggle="modal" data-target="#blogsubscribe">Subscribe to Weekly Posts</a>
+                <a class="gh-btn gh-btn-blue gh-btn-block blog-subscribe-btn" data-toggle="modal" data-target="#blogsubscribe"><span>Subscribe to Weekly Posts</span></a>
 
             </footer>
 

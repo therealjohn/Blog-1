@@ -4,6 +4,11 @@
 
     $(document).ready(function(){
         $(".post-content").fitVids();
+
+        // Mobile Menu Trigger
+        $('.gh-nav-burger').click(function () {
+            $('.gh-mobilehead').toggleClass('gh-mobilehead-open');
+        });
     });
 
     // When all content is loaded, resize dem images
@@ -21,7 +26,7 @@
                 }
             });
         };
-        
+
         casperFullImg();
         $(window).smartresize(casperFullImg);
     });
@@ -52,7 +57,7 @@
           timeout = setTimeout(delayed, threshold || 100);
       };
   }
-  // smartresize 
+  // smartresize
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery,'smartresize');
