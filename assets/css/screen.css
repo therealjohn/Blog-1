@@ -12,6 +12,7 @@
     5.  Read More - Next/Prev Post Links
     6.  Author Page
     7.  Prism
+    8.  Modal
 
  */
 
@@ -19,9 +20,6 @@
 /* ==========================================================================
    0. Imports & Vars
    ========================================================================== */
-/* TODO: replace this with real link to ghost.org2 */
-/*@import url("https://ghost.org/public/ghost-blog-theme.css");*/
-/*@import "ghost-blog-theme.css";*/
 
 :root {
     --darkgrey: #343f44;
@@ -152,10 +150,10 @@ h6 a:hover {
 }
 
 article aside {
-    width: 30%;
-    padding: 0 2.2em;
-    margin: 0 2.2em 1.6em 2.2em;
     float: right;
+    margin: 0 2.2em 1.6em 2.2em;
+    padding: 0 2.2em;
+    width: 30%;
     background: var(--whitegrey);
     border-radius: 3px;
 }
@@ -390,19 +388,6 @@ article aside {
 }
 .popular-posts li:nth-child(3n+2) .number {
     border-color: var(--purple);
-}
-
-#blogsubscribe button {
-    transition: all 0.2s ease;
-}
-
-#blogsubscribe button:hover {
-    box-shadow: 0 0 1px rgba(0,0,0,0.4),0 4px 16px rgba(0,0,0,0.25);
-}
-
-#blogsubscribe p {
-    margin: 3rem 0;
-    font-size: 1.4rem;
 }
 
 .post {
@@ -975,8 +960,8 @@ pre[class*="language-"] {
 }
 
 .wrap.featured .blog-content {
-    width: 100%;
     flex: 0 1 100%;
+    width: 100%;
 }
 .wrap.featured .blog-sidebar {
     display: none;
@@ -1068,4 +1053,57 @@ pre[class*="language-"] {
     .hero-image {
         height: 200px;
     }
+}
+
+/* ==========================================================================
+   8. Modal
+   ========================================================================== */
+
+.gh-modal .modal-content {
+    color: #fff;
+    text-align: center;
+    background: url(../images/bg-poly.svg) 50%/115% scroll,radial-gradient(circle farthest-corner at right bottom,#9ea5ff,#7090fa 10%,#4c99f0 21%,#2b99ee 27%,#27a4e7 35%,#1c94d4 50%,#19a0c2 63%,#1fa6ad 93%,#1c9c7e);
+    /* Pattern - https://qrohlf.com/trianglify-generator/ */
+
+    background-blend-mode: overlay;
+}
+
+.gh-modal .modal-close svg {
+    fill: #fff;
+}
+
+.gh-modal .modal-close svg:hover {
+    fill: #fff;
+}
+
+.gh-modal .modal-title {
+    color: #fff;
+}
+
+.gh-modal .modal-body {
+    padding: 50px 25px;
+}
+
+.gh-modal form {
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+    background: none;
+}
+
+.gh-modal-form-container {
+    display: flex;
+    margin: 2vw auto 1vw;
+    max-width: 400px;
+}
+
+.gh-modal form .gh-input {
+    margin-right: 15px;
+    margin-bottom: 0;
+    padding: 11px 12px;
+}
+
+.gh-modal form p {
+    margin: 1rem 0 0;
+    font-size: 1.4rem;
 }
