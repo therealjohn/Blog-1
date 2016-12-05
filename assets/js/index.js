@@ -1,4 +1,26 @@
 /*globals jQuery, document */
+
+// Dropdown Menus
+function initDropdowns(allDropdowns) {
+    allDropdowns.children('.gh-drop-trigger').on('click', function (e) {
+        e.stopPropagation();
+
+        var thisTrigger = $(this),
+        thisDropdown = thisTrigger.parent();
+
+        if (thisDropdown.hasClass('active')) {
+            thisDropdown.removeClass('active');
+            $(document).off('click');
+        } else {
+            allDropdowns.removeClass('active');
+            thisDropdown.addClass('active');
+            $(document).on('click', function () {
+                allDropdowns.removeClass('active');
+            });
+        }
+    });
+}
+
 (function ($) {
     "use strict";
 

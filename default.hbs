@@ -41,7 +41,7 @@
             <div class="gh-navbar-right">
               <a class="gh-navbar-item" href="https://blog.ghost.org/">Product</a>
               <a class="gh-navbar-item" href="http://dev.ghost.org">Dev</a>
-              <a class="gh-navbar-btn gh-btn" href="https://ghost.org"><span>Back to Ghost</span></a>
+              <a class="gh-navbar-btn gh-btn" href="https://ghost.org" id="signin-button"><span>Back to Ghost</span></a>
             </div>
         </nav>
     </header>
@@ -60,7 +60,7 @@
 
 
           </a>
-            <a class="gh-login-link" href="/">Back to Ghost</a>
+            <a class="gh-login-link" id="signin-button-mobile" href="https://ghost.org">Back to Ghost</a>
         </nav>
         <div class="gh-mobilemenu">
           <a href="https://blog.ghost.org/">Product</a>
@@ -125,6 +125,7 @@
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
     <script type="text/javascript" src="{{asset "js/bootstrap-modal.js"}}"></script>
+    <script type="text/javascript" src="http://auth.ghost.org/signin-button.js"></script>
 
 </body>
 </html>
