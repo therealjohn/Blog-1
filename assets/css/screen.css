@@ -45,6 +45,10 @@
     font-size: 1.6rem;
 }
 
+body {
+    background: #f8fafc;
+}
+
 p {
     margin: 1.6em 0;
 }
@@ -171,6 +175,7 @@ article aside {
     overflow: hidden;
     padding: 4vw;
     border: none;
+    background: linear-gradient(#f8fafc,#f4f8fb);
 }
 
 .blog-header {
@@ -229,8 +234,22 @@ article aside {
     font-weight: 400;
 }
 
+.post-template .blog-content {
+    margin: 4vw auto;
+    padding: 30px 40px 40px;
+    background: #fff;
+    border-radius: 6px;
+}
+
+@media (max-width: 700px) {
+    .post-template .blog-content {
+        padding: 0;
+    }
+}
+
 .blog-content {
-    flex: 0 1 66.6666%;
+    flex: 0 1 auto;
+    max-width: 780px;
 }
 
 .blog-sidebar {
@@ -344,7 +363,7 @@ article aside {
     margin: 0 0 2px 0;
     font-size: 1.4rem;
     line-height: 1.4em;
-    background: rgba(229, 239, 245, 0.8);
+    background: #fff;
 }
 
 .popular-posts a {
@@ -372,12 +391,9 @@ article aside {
     line-height: 1.5em;
     font-weight: bold;
     text-align: center;
-    background: rgba(229, 239, 245, 0.8);
+    background: #fff;
 }
 
-.popular-posts li:hover {
-    background: rgba(229, 239, 245, 1);
-}
 
 .popular-posts li:hover .number {
     background: rgba(229, 239, 245, 1);
@@ -387,12 +403,21 @@ article aside {
     border-color: var(--green);
 }
 .popular-posts li:nth-child(3n+2) .number {
-    border-color: var(--purple);
+    border-color: var(--yellow);
 }
 
 .post {
     margin-bottom: 40px;
-    border-bottom: var(--lightgrey) 1px dashed;
+    padding: 20px 30px 30px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.03);
+}
+
+@media (max-width: 700) {
+    .post {
+        padding: 15px 20px 20px;
+    }
 }
 
 .post-title {
@@ -404,7 +429,7 @@ article aside {
 }
 
 .post-excerpt p {
-    margin: 2.6rem 0;
+    margin: 2.6rem 0 0;
     line-height: 1.7em;
 }
 
