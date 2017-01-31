@@ -22,24 +22,14 @@ function initDropdowns(allDropdowns) {
 }
 
 (function ($) {
-    "use strict";
-
-    $(document).ready(function(){
-        $(".post-content").fitVids();
-
-        // Mobile Menu Trigger
-        $('.gh-nav-burger').click(function () {
-            $('.gh-mobilehead').toggleClass('gh-mobilehead-open');
-        });
-    });
+    'use strict';
 
     // When all content is loaded, resize dem images
-    $(window).load(function() {
-
+    $(window).load(function () {
         function casperFullImg() {
-            $("img").each( function() {
-                var contentWidth = $(".post-content").outerWidth(); // Width of the content
-                var imageWidth = $(this)[0].naturalWidth; // Original image resolution
+            $('img').each(function () {
+                var contentWidth = $('.post-content').outerWidth(), // Width of the content
+                    imageWidth = $(this)[0].naturalWidth; // Original image resolution
 
                 if (imageWidth >= contentWidth) {
                     $(this).addClass('full-img');
@@ -52,34 +42,32 @@ function initDropdowns(allDropdowns) {
         casperFullImg();
         $(window).smartresize(casperFullImg);
     });
-
-
 }(jQuery));
 
-(function($,sr){
+(function ($,sr) {
+    // debouncing function from John Hann
+    // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+    var debounce = function (func, threshold, execAsap) {
+        var timeout;
 
-  // debouncing function from John Hann
-  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-  var debounce = function (func, threshold, execAsap) {
-      var timeout;
+        return function debounced() {
+            var self = this, args = arguments;
+            function delayed() {
+                if (!execAsap) {
+                    func.apply(self, args);
+                }
+                timeout = null;
+            };
 
-      return function debounced () {
-          var obj = this, args = arguments;
-          function delayed () {
-              if (!execAsap)
-                  func.apply(obj, args);
-              timeout = null;
-          };
+            if (timeout) {
+                clearTimeout(timeout);
+            } else if (execAsap) {
+                func.apply(self, args);
+            }
 
-          if (timeout)
-              clearTimeout(timeout);
-          else if (execAsap)
-              func.apply(obj, args);
-
-          timeout = setTimeout(delayed, threshold || 100);
-      };
-  }
-  // smartresize
-  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
+            timeout = setTimeout(delayed, threshold || 100);
+        };
+    }
+    // smartresize
+    jQuery.fn[sr] = function (fn) {return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);};
 })(jQuery,'smartresize');
