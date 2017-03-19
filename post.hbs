@@ -52,18 +52,18 @@
                 </section>
                 {{/next_post}}
 
-                <a class="gh-btn gh-btn-blue gh-btn-block blog-subscribe-btn" data-toggle="modal" data-target="#blogsubscribe"><span>Subscribe to Weekly Posts</span></a>
+                <a class="gh-btn gh-btn-blue gh-btn-block blog-subscribe-btn" data-toggle="modal" data-target="#blogsubscribe"><span>Subscribe for Latest Posts</span></a>
 
             </footer>
 
             <section class="comments">
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
-                    var disqus_identifier = 'ghost-{{id}}';
                     (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://jmillerdev.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
                     })();
                 </script>
             </section>
@@ -73,6 +73,6 @@
 
     </section>
 
-    {{> sidebar}}
+    {{!{{> sidebar}}
 
 </div>
