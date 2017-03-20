@@ -4,3 +4,7 @@
     background-blend-mode: normal;*/
     margin: 0px 10px 0px 0px;
 }
+
+input.book {
+    color: black;
+}

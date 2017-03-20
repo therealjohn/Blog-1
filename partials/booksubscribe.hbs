@@ -7,6 +7,14 @@
             clear: left;
             font: 14px Helvetica, Arial, sans-serif;
         }
+
+        #mc-embedded-subscribe {
+            margin: 0px;
+        }
+
+        #mc_embed_signup #mce-success-response {
+            color:white;
+        }
         /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
@@ -18,11 +26,11 @@
                 <div class="mc-field-group">
                     <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
     </label>
-                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                    <input type="email" value="" name="EMAIL" class="required email book" id="mce-EMAIL">
                 </div>
                 <div class="mc-field-group">
                     <label for="mce-OPINION">What would you like to see covered in this book? </label>
-                    <input type="text" value="" name="OPINION" class="" id="mce-OPINION">
+                    <input type="text" value="" name="OPINION" class="book" id="mce-OPINION">
                 </div>
                 <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response" style="display:none"></div>
@@ -30,7 +38,7 @@
                 </div>
                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4322b46d3816de038b3dc4b9e_0c0d6b710c" tabindex="-1" value=""></div>
-                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="gh-btn gh-btn-green"></div>
+                <div class="clear"><button class="gh-btn gh-btn-green" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"><span>Subscribe</span></button></div>
             </div>
             <p><strong>Privacy policy:</strong> No spam. No jibber jabber. Unsubscribe any time.</p>
         </form>
